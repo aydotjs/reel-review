@@ -5,6 +5,7 @@ import tempWatchedData from "./WatchedMovieData";
 import Button from "./Button";
 import Movie from "./Movie";
 import Summary from "./Summary";
+import WatchedMovies from "./WatchedMovies";
 const Main = () => {
   const [movies, setMovies] = useState(tempMovieData);
   const [watched, setWatched] = useState(tempWatchedData);
@@ -50,26 +51,7 @@ const Main = () => {
               watchedMovies={watched}
             />
             <ul className="list">
-              {watched.map((movie) => (
-                <li key={movie.imdbID}>
-                  <img src={movie.Poster} alt={`${movie.Title} poster`} />
-                  <h3>{movie.Title}</h3>
-                  <div>
-                    <p>
-                      <span>⭐️</span>
-                      <span>{movie.imdbRating}</span>
-                    </p>
-                    <p>
-                      <span>🌟</span>
-                      <span>{movie.userRating}</span>
-                    </p>
-                    <p>
-                      <span>⏳</span>
-                      <span>{movie.runtime} min</span>
-                    </p>
-                  </div>
-                </li>
-              ))}
+              <WatchedMovies watched={watched}/>
             </ul>
           </>
         )}
