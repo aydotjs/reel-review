@@ -23,6 +23,9 @@ const Main = () => {
   const handleIsOpen1 = () => {
     setIsOpen1((open) => !open);
   };
+  const handleIsOpen2 = () => {
+    setIsOpen2((open) => !open);
+  };
 
   return (
     <main className="main">
@@ -36,12 +39,7 @@ const Main = () => {
       </div>
 
       <div className="box">
-        <button
-          className="btn-toggle"
-          onClick={() => setIsOpen2((open) => !open)}
-        >
-          {isOpen2 ? "–" : "+"}
-        </button>
+       <Button isOpen={isOpen2} onOpen={handleIsOpen2}/>
         {isOpen2 && (
           <>
             <Summary
